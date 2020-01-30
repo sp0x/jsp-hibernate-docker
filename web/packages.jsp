@@ -1,4 +1,7 @@
-<%--
+<%@ page import="com.mlpk.repos.UserRepository" %>
+<%@ page import="com.mlpk.repos.PackageRepository" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.mlpk.models.Package" %><%--
   Created by IntelliJ IDEA.
   User: cyb3r
   Date: 29-Jan-20
@@ -10,9 +13,22 @@
     String u1 = (String) session.getAttribute("user");
     boolean l1 = u1 != null;
     if (l1) {
+        PackageRepository repo = new PackageRepository();
+        List<Package> packages = repo.getPackages();
 %>
-<ul>
-
+<a class="btn btn-info" href="newPackage.jsp">Add new package</a>
+<ul class="packages">
+    <%
+        for (Package pkg :
+                packages) {
+    %>
+    <li class="package">
+        <div class="name"><%= pkg.getName() %></div>
+        <div class="language"><%= pkg.getLanguage()%></div>
+    </li>
+    <%
+        }
+    %>
 </ul>
 <%
     }

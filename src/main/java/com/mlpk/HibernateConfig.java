@@ -1,6 +1,8 @@
 package com.mlpk;
 
-import com.mlpk.models.User;
+import com.mlpk.models.*;
+import com.mlpk.models.Package;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
@@ -43,7 +45,8 @@ public class HibernateConfig {
                 .applySettings(cfg.getProperties()).build();
 
         MetadataSources sources = new MetadataSources(svcRegistry)
-                .addAnnotatedClass(User.class);
+                .addAnnotatedClass(User.class)
+                .addAnnotatedClass(Package.class);
 
         Metadata metadata = sources.buildMetadata();
         sessionFactory = metadata.getSessionFactoryBuilder().build();

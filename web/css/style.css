@@ -1,4 +1,24 @@
 .container {
   padding-top: 50px; }
 
+ul {
+  list-style-type: none; }
+
+.package {
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px; }
+  .package .name {
+    font-size: 30px; }
+  .package .language {
+    padding: 5px;
+    background-color: aquamarine;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block; }
+
+.packages {
+  margin-top: 15px; }
+
 /*# sourceMappingURL=style.css.map */

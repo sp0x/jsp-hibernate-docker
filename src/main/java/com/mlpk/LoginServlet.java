@@ -16,25 +16,23 @@ import java.io.PrintWriter;
 @WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
 public class LoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private final UserRepository userRepo;
+    private final UserRepository mUserRepo;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
     public LoginServlet() {
         System.out.println("FirstServlet Constructor called!");
-        userRepo = new UserRepository();
+        mUserRepo = new UserRepository();
     }
 
     /**
-     * @see Servlet#init(ServletConfig)
      */
     public void init(ServletConfig config) throws ServletException {
         System.out.println("FirstServlet \"Init\" method called");
     }
 
     /**
-     * @see Servlet#destroy()
      */
     public void destroy() {
         System.out.println("FirstServlet \"Destroy\" method called");
@@ -74,7 +72,7 @@ public class LoginServlet extends HttpServlet {
         if(session!=null)
         {
             String encpwd = Encryption.encrypt(password);
-            User user = userRepo.login(username, encpwd);
+            User user = mUserRepo.login(username, encpwd);
             if(user!=null){
                 //store the attributes
                 session.setAttribute("user", username);

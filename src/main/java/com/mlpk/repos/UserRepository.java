@@ -13,7 +13,6 @@ import java.util.List;
 
 public class UserRepository {
 
-
     public User login(String user, String password) {
         try (Session s = HibernateConfig.getSessionFactory().openSession()) {
             // Create CriteriaBuilder
@@ -25,22 +24,22 @@ public class UserRepository {
                     builder.equal(root.get("password"), password)
             ));
             List<User> users = s.createQuery(criteria).getResultList();
-            return users.size()>0 ? users.get(0) : null;
+            return users.size() > 0 ? users.get(0) : null;
         }
     }
 
     public void saveUser(String username, String password) {
-        if(username==null || password==null){
+        if (username == null || password == null) {
             return;
         }
-        try(Session s = HibernateConfig.getSessionFactory().openSession()){
+        try (Session s = HibernateConfig.getSessionFactory().openSession()) {
             Transaction tx = s.beginTransaction();
             User user = new User();
             user.setUserId(username);
             user.setPassword(Encryption.encrypt(password));
             s.save(user);
             tx.commit();
-            assert user.getId()!=null;
+            assert user.getId() != null;
         }
     }
 }

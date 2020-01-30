@@ -1,3 +1,30 @@
 .container{
   padding-top: 50px;
 }
+ul{
+  list-style-type:none;
+}
+li{
+
+}
+.package{
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  padding: 10px;
+
+  .name{
+    font-size: 30px;
+  }
+  .language{
+    padding: 5px;
+    background-color: aquamarine;
+    font-size: 12px;
+    border-radius: 5px;
+    display:inline-block;
+  }
+}
+
+.packages{
+  margin-top: 15px;
+}
