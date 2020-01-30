@@ -15,6 +15,7 @@ li{
 
   .name{
     font-size: 30px;
+    display: inline-block;
   }
   .language{
     padding: 5px;
@@ -22,7 +23,9 @@ li{
     font-size: 12px;
     border-radius: 5px;
     display:inline-block;
+    float: right;
   }
+  margin-bottom:5px;
 }
 
 .packages{
