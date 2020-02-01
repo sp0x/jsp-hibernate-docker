@@ -1,5 +1,6 @@
 package com.mlpk.models;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -12,12 +13,24 @@ public class User{
     @Column
     private String password;
 
+    @OneToMany(mappedBy="users")
+    private List<Package> packages;
+
+
     public User() {
     }
 
     public User(String userId, String password) {
         this.userId = userId;
         this.password = password;
+    }
+
+    public List<Package> getPackages() {
+        return packages;
+    }
+
+    public void setPackages(List<Package> packages) {
+        this.packages = packages;
     }
 
     public Long getId() {
