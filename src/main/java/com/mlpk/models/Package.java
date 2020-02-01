@@ -50,4 +50,8 @@ public class Package {
     public void setName(String name) {
         this.name = name;
     }
+
+    public boolean isOwn(Long userId) {
+        return getAuthor().equals(userId);
+    }
 }

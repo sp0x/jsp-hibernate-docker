@@ -43,4 +43,18 @@ public class PackageRepository {
         }
 
     }
+
+    public boolean DeletePackage(int pkgid, Long userId) {
+        try (Session s = HibernateConfig.getSessionFactory().openSession()) {
+            Transaction tx = s.beginTransaction();
+            String hql = "delete from Package where id= :id and author = :author";
+            int ret = s.createQuery(hql)
+                    .setParameter("id", new Long(pkgid))
+                    .setParameter("author", userId)
+                    .executeUpdate();
+            tx.commit();
+            return ret > 0;
+        }
+
+    }
 }

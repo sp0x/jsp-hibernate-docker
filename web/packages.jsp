@@ -21,10 +21,22 @@
     <%
         for (Package pkg :
                 packages) {
+            boolean isOwn = pkg.isOwn((Long) session.getAttribute("userId"));
     %>
     <li class="package">
-        <div class="name"><%= pkg.getName() %></div>
-        <div class="language"><%= pkg.getLanguage()%></div>
+        <div class="name"><%= pkg.getName() %>
+        </div>
+        <div class="language"><%= pkg.getLanguage()%>
+        </div>
+        <%
+            if (isOwn) {
+        %>
+        <div class="del">
+            <a href="DeletePackage?id=<%= pkg.getId() %>">Delete</a>
+        </div>
+        <%
+            }
+        %>
     </li>
     <%
         }

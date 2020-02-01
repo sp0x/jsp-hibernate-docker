@@ -25,11 +25,15 @@ public class HibernateConfig {
         Configuration cfg = new Configuration();
         Properties settings = new Properties();
         String host = System.getenv("DB_HOST");
+        String db = System.getenv("DB_DB");
         if(host==null){
             host = "localhost";
         }
+        if(db==null){
+            db = "postgres";
+        }
         settings.put(Environment.DRIVER, "org.postgresql.Driver");
-        settings.put(Environment.URL, "jdbc:postgresql://" + host + ":5432/example");
+        settings.put(Environment.URL, "jdbc:postgresql://" + host + ":5432/" + db);
         settings.put(Environment.USER, "postgres");
         settings.put(Environment.PASS, "example");
         settings.put(Environment.SHOW_SQL, true);
