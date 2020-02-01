@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Index</title>
@@ -9,14 +8,21 @@
 <%
     String username = (String) session.getAttribute("user");
     boolean isLogged = username != null;
+    String error = (String) request.getAttribute("error");
 %>
 <body>
 <jsp:directive.include file="navbar.jsp"/>
 
 <div class="container">
-    <c:if test="${not empty error}">
-        <div class="alert-danger"><%= error %></div>
-    </c:if>
+    <%
+        if (error != null) {
+    %>
+    <div class="alert-danger">
+        <%= error %>
+    </div>
+    <%
+        }
+    %>
     <div class="jumbotron">
         <h1>Machine learning package manager</h1>
         <%

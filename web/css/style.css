@@ -1,27 +1,39 @@
 .container {
-  padding-top: 50px; }
+  padding-top: 50px;
+}
 
 ul {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 .package {
   border-style: solid;
   border-radius: 10px;
   border-width: 1px;
   padding: 10px;
-  margin-bottom: 5px; }
-  .package .name {
-    font-size: 30px;
-    display: inline-block; }
-  .package .language {
-    padding: 5px;
-    background-color: aquamarine;
-    font-size: 12px;
-    border-radius: 5px;
-    display: inline-block;
-    float: right; }
+  position: relative;
+  margin-bottom: 5px;
+}
+.package .name {
+  font-size: 30px;
+  display: inline-block;
+}
+.package .language {
+  padding: 5px;
+  background-color: aquamarine;
+  font-size: 12px;
+  border-radius: 5px;
+  display: inline-block;
+  float: right;
+}
+.package .del {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
 
 .packages {
-  margin-top: 15px; }
+  margin-top: 15px;
+}
 
 /*# sourceMappingURL=style.css.map */

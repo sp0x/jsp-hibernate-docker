@@ -12,6 +12,7 @@ li{
   border-radius: 10px;
   border-width: 1px;
   padding: 10px;
+  position: relative;
 
   .name{
     font-size: 30px;
@@ -25,6 +26,12 @@ li{
     display:inline-block;
     float: right;
   }
+  .del{
+    position: absolute;
+    right: 10px;
+    bottom: 0px;
+  }
+
   margin-bottom:5px;
 }
 
