@@ -1,4 +1,4 @@
-package com.mlpk;
+package com.mlpk.utils;
 
 
 import java.math.BigInteger;

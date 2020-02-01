@@ -2,6 +2,7 @@ package com.mlpk;
 
 import com.mlpk.models.User;
 import com.mlpk.repos.UserRepository;
+import com.mlpk.utils.Encryption;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

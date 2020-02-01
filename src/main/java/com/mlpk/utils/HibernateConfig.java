@@ -1,4 +1,4 @@
-package com.mlpk;
+package com.mlpk.utils;
 
 import com.mlpk.models.*;
 import com.mlpk.models.Package;

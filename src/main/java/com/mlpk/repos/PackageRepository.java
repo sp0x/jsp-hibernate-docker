@@ -1,8 +1,7 @@
 package com.mlpk.repos;
 
-import com.mlpk.HibernateConfig;
+import com.mlpk.utils.HibernateConfig;
 import com.mlpk.models.Package;
-import com.mlpk.models.User;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 

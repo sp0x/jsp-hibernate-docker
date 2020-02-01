@@ -13,7 +13,10 @@ public class User{
     @Column
     private String password;
 
-    @OneToMany(mappedBy="users")
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Package> packages;
 
 

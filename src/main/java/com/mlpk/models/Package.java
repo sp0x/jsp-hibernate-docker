@@ -15,9 +15,15 @@ public class Package {
     @Column
     private String language;
 
+//    @ManyToOne
+//    @JoinColumn(name="user_id", nullable=false)
+//    private User user;
+
     public Package(){
 
     }
+
+
 
     public String getLanguage() {
         return language;
